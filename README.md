@@ -1,6 +1,6 @@
 # SendX-Backend-Assignment
 
-Given Assessment :
+### Given Assessment :
  - Write a server endpoint which takes the URL of a webpage. 
  - After getting the URL it fetches the webpage and downloads it as a file on the local file system.
  - The server accepts a retry limit as a parameter. It retries maximum upto 10 times or retry limit, whichever is lower, before either successfully downloading the webpage or marking the page as a failure.
@@ -8,7 +8,7 @@ Given Assessment :
  - Make a pool of workers that do the work of downloading the requested webpage. So basically if there are 10000’s of concurrent requests to download web pages, the number of requests to actually download them are still limited (based on number of active workers)
 
 
-JavaScript : 
+### JavaScript : 
 Implemented a server endpoint using Node.js and Express that takes a URL and a retry limit as parameters, fetches the webpage, and downloads it as a .html file on the local file system. 
  - The server endpoint creates a pool of workers that download the webpage in parallel. 
  - If the number of active workers exceeds the maximum, the oldest worker is removed from the pool to make room for the new one. 
@@ -17,7 +17,7 @@ Implemented a server endpoint using Node.js and Express that takes a URL and a r
  - If the download fails, the worker retries up to the minimum of retry limit given or 10 times before giving up and returning an error.
 
 
-Golang :
+### Golang :
 Implementd a server endpoint in Go using concurrency techniques that takes a URL and a retry limit as parameters, fetches the webpage, and downloads a file on the local file system:
 
  - main: It creates a cache folder to store downloaded files if it doesn't exist and a the worker pool, then starts the worker pipeline by calling workerPipeline. It also sets up an HTTP handler for the "/download" using the downloadHandler function. Finally, it starts the HTTP server.
